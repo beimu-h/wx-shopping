@@ -1,0 +1,27 @@
+<Tab tab="{{tab}}" bind:classChange="handleclassChange">
+    <view class="s_main">
+        <view class="s_title">
+            <text class="t_tips active">全部</text>
+            <text class="t_tips">正在热卖</text>
+            <text class="t_tips">即将上线</text>
+        </view>
+        <view class="s_content">
+            <navigator class="goods_item"
+            wx:for="{{shou}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                <!-- 左侧图片 -->
+                <view class="goods_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"/>
+                </view>
+                <!-- 右侧信息-->
+                <view class="goods_info">
+                    <view class="info_name">{{item.goods_name}}</view>
+                    <view class="info_price">￥{{item.goods_price}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</Tab>

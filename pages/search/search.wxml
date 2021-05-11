@@ -1,0 +1,15 @@
+<view class="ss_row">
+    <view class="ipt">
+        <input value="{{iptValue}}" bindinput="getInput" placeholder="请输入要搜索的关键字" />
+    </view>
+        <button bind:tap="quXiao" hidden="{{!isfocuse}}">取消</button>
+</view>
+<view class="ss_content">
+    <view class="ss_item"
+    wx:for="{{goods}}"
+    wx:key="goods_id">
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" >{{item.goods_name}}</navigator>
+    </view>
+    
+</view>
+  

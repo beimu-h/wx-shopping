@@ -1,0 +1,116 @@
+page{
+    background-color: #edece8;
+}
+.user_info{
+    height: 45vh;
+    background-color: var(--themeColor);
+    overflow: hidden;
+    position: relative;
+    .user_imge{
+        position: relative;
+        .user_bg{
+            height: 48vh;
+            filter: blur(8rpx);
+        }
+        .u_info{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: 30%;
+            text-align: center;
+            .u_icon{
+                width: 150rpx;
+                height: 150rpx;
+                border-radius: 50%;
+            }
+            .u_name{
+                color: #fff;
+                font-size: 30rpx;
+                margin-top: 20rpx;
+            }
+        }
+    }
+    .btn{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 20%;
+        border: 1px solid greenyellow;
+        padding: 10rpx 100rpx;
+        border-radius: 12rpx;
+        font-size: 40rpx;
+        text-align: center;
+        color: greenyellow;
+    }
+}
+.content{
+    position: relative;
+    color: #666;
+    .u_main{
+        position: absolute;
+        padding-bottom: 100rpx;
+        width: 92%;
+        left: 50%;
+        transform: translate(-50%);
+        top: -40rpx;
+        .his_wrap{
+            display: flex;
+            background-color: #fff;
+            navigator{
+                flex: 1;
+                text-align: center;
+                padding: 10rpx 0;
+                .h_num{
+                    color: var(--themeColor);
+                }
+                .h_name{}
+            }
+        }
+        .order_warp{
+            background-color: #fff;
+            margin-top: 30rpx;
+            .o_title{
+                // color: #ccc;
+                padding: 15rpx;
+                border-bottom: 1px solid #ccc;
+            }
+            .o_content{
+                display: flex;
+                navigator{
+                    flex: 1;
+                    text-align: center;
+                    padding: 15rpx 0;
+                    .iconfont{
+                        color: var(--themeColor);
+                    }
+                    .o_name{
+                        font-size: 25rpx;
+                        padding-top: 10rpx;
+                    }
+                }
+            }
+        }
+        .shouhuo{
+            margin-top: 30rpx;
+            background-color: #fff;
+            padding: 15rpx;
+        }
+        .help_tool{
+            margin-top: 30rpx;
+            background-color: #fff;
+            .tool_item{
+                padding: 15rpx;
+                border-bottom: 1px solid #ccc;
+            }
+            .help_tel{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .share{
+            margin-top: 30rpx;
+            background-color: #fff;
+            padding: 15rpx;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<!-- 获取地址 -->
+<view class="h_address">
+    <!-- 缓存中没有地址则 则显示获取地址按钮-->
+    <view class="ad_btn" wx:if="{{!address}}">
+        <button bind:tap="hqAddress" type="primary" plain="{{true}}">收货地址</button>
+    </view>
+    <!-- 缓存中有地址 则不显示 -->
+    <view wx:else class="user">
+        <view class="user_info">
+            <view >收货人：{{address.userName}}</view>
+            <view class="ad">{{address.all}}</view>
+        </view>
+        <view class="tel">{{address.telNumber}}</view>
+    </view>
+</view>
+
+<!-- 购物车内容 -->
+<view class="cart_con">
+    <view class="cart_title">购物车</view>
+    <block wx:if="{{cart.length!==0}}">
+        <view class="cart_info"
+        wx:for="{{cart}}"
+        wx:key="cat_id">
+            <view class="cart_item">
+                <!-- 复选框 -->
+                <view class="item_check">
+                    <checkbox-group data-id="{{item.goods_id}}" bindchange="itemChange">
+                        <checkbox checked="{{item.checked}}" />
+                    </checkbox-group>
+                </view>
+                <!-- 图片 -->
+                <navigator class="item_image">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                </navigator>
+                <!-- 商品信息 -->
+                <view class="item_info">
+                    <view class="s_name">{{item.goods_name}}</view>
+                    <view class="s_tool">
+                        <view class="price">￥{{item.goods_price}}</view>
+                        <view class="tool">
+                            <view bind:tap="numChage" data-id="{{item.goods_id}}" data-op="{{-1}}" class="aj">-</view>
+                            <view class="num">{{item.num}}</view>
+                            <view bind:tap="numChage" data-id="{{item.goods_id}}" data-op="{{1}}" class="aj">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <image mode="widthFix" src="../../icons/kong.gif" />
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;什么都没有哦~</text>
+    </block>
+</view>
+
+<!-- 全选 结算导航栏 -->
+<view class="jiesuan">
+    <!-- 全选 -->
+    <view class="all_check">
+        <checkbox-group bindchange="allcheckChage">
+            <checkbox checked="{{allCheck}}" />全选
+        </checkbox-group>
+    </view>
+    <!-- 合计价格 -->
+    <view class="total_price">
+        <view class="sum_price">
+            合计:<text class="sum" decode="{{true}}">￥&nbsp;{{totalPrice}}</text>
+        </view>
+        <view >包含运费</view>
+    </view>
+    <!-- 结算 -->
+    <view bind:tap="jieSuan" class="end">
+        结算({{totalNum}})
+    </view>
+</view>

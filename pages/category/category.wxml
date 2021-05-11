@@ -1,0 +1,39 @@
+<view class="cates">
+    <SearchInput></SearchInput>
+    <view class="meau">
+        <!-- 左侧菜单栏 -->
+        <scroll-view scroll-y class="left_meau">
+            <view class="meau_items {{index===currentIndex?'active':''}}"
+            wx:for="{{meauList}}"
+            wx:key="*this"
+            bindtap="dianTap"
+            data-index="{{index}}">
+                {{item}}
+            </view>
+        </scroll-view>
+        <!-- 右侧商品信息栏 -->
+        <scroll-view scroll-top="{{scollTop}}"  scroll-y class="right_meau">
+            <view class="things_ifno"
+            wx:for="{{thingsList}}"
+            wx:for-index="index1"
+            wx:for-item="item1">
+                <view class="info_title">
+                    <text class="xian">/</text>
+                    <text class="title">{{item1.cat_name}}</text>
+                    <text class="xian">/</text>
+                </view>
+                <view class="info_cont">
+                    <navigator
+                        wx:for="{{item1.children}}"
+                        wx:for-item="item2"
+                        wx:for-index="index2"
+                        wx:key="cat_id"
+                        url="/pages/goods_list/goods_list?cid={{item2.cat_id}}">
+                            <image mode="widthFix" src="{{item2.cat_icon}}" />
+                            <view class="thing_name">{{item2.cat_name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

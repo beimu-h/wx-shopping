@@ -1,0 +1,1 @@
+<Tab tab="{{tab}}" bind:classChange="handleclassChange">内容</Tab>

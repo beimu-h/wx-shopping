@@ -1,0 +1,81 @@
+<view class="user_info">
+    <view wx:if="{{userinfo.avatarUrl}}" class="user_imge">
+        <!-- <image class="user_bg" src="{{userinfo.avatarUrl}}"></image> -->
+        <image class="user_bg" src="../../icons/1.jpg"></image>
+        <view class="u_info">
+            <!-- <image class="u_icon" src="{{userinfo.avatarUrl}}"></image> -->
+            <image class="u_icon" src="../../icons/1.jpg"></image>
+            <!-- <view class="u_name">{{userinfo.nickName}}</view> -->
+            <view class="u_name">北木</view>
+        </view>
+    </view>
+    <view wx:else class="btn">
+        <navigator url="/pages/login/login" >登录</navigator>
+    </view>
+</view>
+<view class="content">
+    <view class="u_main">
+        <!-- 历史足迹 -->
+        <view class="his_wrap">
+            <navigator >
+                <view class="h_num">0</view>
+                <view class="h_name">收藏的店铺</view>
+            </navigator>
+             <navigator url="/pages/collect/collect">
+                <view class="h_num">{{shounum}}</view>
+                <view class="h_name">收藏的商品</view>
+            </navigator>
+             <navigator >
+                <view class="h_num">0</view>
+                <view class="h_name">关注的商品</view>
+            </navigator>
+             <navigator >
+                <view class="h_num">0</view>
+                <view class="h_name">我的足迹</view>
+            </navigator>
+        </view>
+        <!-- 我的订单 -->
+        <view class="order_warp">
+            <view class="o_title">我的订单</view>
+            <view class="o_content">
+                <navigator url="/pages/order/order?type=1">
+                    <view class="iconfont icon-dingdan"></view>
+                    <view class="o_name">全部订单</view>
+                </navigator>
+                <navigator url="/pages/order/order?type=2">
+                    <view class="iconfont icon-fukuantongzhi"></view>
+                    <view class="o_name">待付款</view>
+                </navigator>
+                <navigator url="/pages/order/order?type=3">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="o_name">待收货</view>
+                </navigator>
+                <navigator url="/pages/order/order?type=4">
+                    <view class="iconfont icon-tui"></view>
+                    <view class="o_name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <!-- 收货地址管理 -->
+        <view class="shouhuo">
+            收货地址管理
+        </view>
+        <!-- 帮助 -->
+        <view class="help_tool">
+            <view class="tool_item help_tel">
+                <text >联系客服</text>
+                <text >128-012-2019</text>
+            </view>
+            <view class="tool_item">
+                意见反馈
+            </view>
+            <view class="tool_item">
+                 关于我们
+            </view>
+        </view>
+        <!-- 分享 -->
+        <view class="share">
+            把应用分享给其他人
+        </view>
+    </view>
+</view>

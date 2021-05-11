@@ -1,0 +1,102 @@
+page {
+  padding-bottom: 90rpx;
+}
+.detial_swiper swiper {
+  height: 65vw;
+  text-align: center;
+}
+.detial_swiper swiper image {
+  width: 60%;
+}
+.g_price {
+  padding: 15rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--themeColor);
+}
+.goods_info {
+  border-bottom: 8rpx solid #dedede;
+  padding: 10rpx 0;
+  display: flex;
+}
+.goods_info .g_name {
+  flex: 4;
+  color: #000;
+  font-size: 28rpx;
+  padding: 0 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_info .g_c {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1rpx solid #000;
+}
+.goods_info .g_c .icon-shoucangmian {
+  color: orangered;
+}
+.goods_info .g_c .c_name {
+  font-size: 26rpx;
+}
+.info .info_title {
+  color: var(--themeColor);
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 20rpx;
+}
+.bt_tool {
+  border-top: 2rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  background-color: #fff;
+}
+.bt_tool .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  text-align: center;
+  position: relative;
+}
+.bt_tool .tool_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  size: min;
+}
+.bt_tool .car {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffa500;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}
+.bt_tool .buy {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eb4450;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: 600;
+}

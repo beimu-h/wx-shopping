@@ -1,0 +1,70 @@
+<!--pages/goods_list/goods_list.wxml-->
+<!-- 搜索框 -->
+<SearchInput></SearchInput>
+<!-- 导航栏 -->
+<Tab tab="{{tab}}" bindclassChange="handleclassChange">
+    <block wx:if="{{tab[0].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"
+            wx:for="{{good_list}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                <!-- 左侧图片 -->
+                <view class="goods_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"/>
+                </view>
+                <!-- 右侧信息-->
+                <view class="goods_info">
+                    <view class="info_name">{{item.goods_name}}</view>
+                    <view class="info_price">￥{{item.goods_price}}<text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库存：{{item.goods_number}} </text></view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:if="{{tab[1].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"
+            wx:for="{{good_list}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                <!-- 左侧图片 -->
+                <view class="goods_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"/>
+                </view>
+                <!-- 右侧信息-->
+                <view class="goods_info">
+                    <view class="info_name">{{item.goods_name}}</view>
+                    <view class="info_price">销量：{{item.goods_id}}台</view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:if="{{tab[2].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"
+            wx:for="{{good_list}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                <!-- 左侧图片 -->
+                <view class="goods_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"/>
+                </view>
+                <!-- 右侧信息-->
+                <view class="goods_info">
+                    <view class="info_name">{{item.goods_name}}</view>
+                    <view class="info_price">￥{{item.goods_price}}</view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+</Tab>
+
+<view class="shop">
+    
+</view>
